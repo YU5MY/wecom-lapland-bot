@@ -1,4 +1,4 @@
-name: CI
+﻿name: CI
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
           pip install pytest httpx
 
       - name: Run tests
-        run: pytest tests/ -v
+        run: python -m pytest tests/ -v
         env:
           PYTHONPATH: .
           WECOM_CORP_ID: test

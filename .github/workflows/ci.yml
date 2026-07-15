@@ -26,6 +26,7 @@ jobs:
       - name: Run tests
         run: pytest tests/ -v
         env:
+          PYTHONPATH: .
           WECOM_CORP_ID: test
           WECOM_AGENT_ID: test
           WECOM_CORP_SECRET: test

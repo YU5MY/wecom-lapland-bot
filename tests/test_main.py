@@ -29,9 +29,9 @@ def test_callback_get_with_partial_params():
 
 
 def test_callback_post_returns_ok():
-    """POST /callback 缺少参数时正常应返回 422"""
+    """POST /callback 空请求体且配置了 AES 密钥时返回 403"""
     resp = client.post("/callback")
-    assert resp.status_code == 422
+    assert resp.status_code == 403
 
 
 def test_split_sentences_import():

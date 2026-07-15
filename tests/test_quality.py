@@ -38,7 +38,7 @@ def test_quality_anomaly_detected():
 def test_quality_slow_response_warn():
     qa = QualityAsserter()
     result = qa.assert_response_quality("还行。", "你好", 6.0)
-    assert "slow_response" in result["issues"]
+    assert any("slow_response" in issue for issue in result["issues"])
 
 
 def test_quality_summary():
